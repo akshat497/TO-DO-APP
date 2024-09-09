@@ -15,8 +15,12 @@
 
         <!-- Show Logout button if token is present -->
         <button *ngIf="isLoggedIn" class="btn btn-outline-danger" type="button" (click)="logout()">Logout</button>
+        <div>"  "  </div>
+        <button *ngIf="!isLoggedIn" class="btn btn-outline-success" type="button" routerLink="/register" routerLinkActive="active">Register</button>
+
       </form>
     </div>
+
   </div>
 </nav>
 

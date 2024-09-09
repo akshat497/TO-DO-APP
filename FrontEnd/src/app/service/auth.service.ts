@@ -98,6 +98,9 @@ updateNote(noteId: string, note: Note, token: string): Observable<{ success: boo
   const headers = new HttpHeaders({ 'auth-token': token });
   return this.http.put<{ success: boolean, message: string }>(`${this.noteApiUrl}updatenote/${noteId}`, note, { headers });
 }
+registerUser(user: { name: string, email: string, password: string }): Observable<{ success: boolean, authtoken: string, message: string }> {
+  return this.http.post<{ success: boolean, authtoken: string, message: string }>(`${this.apiUrl}createuser`, user);
+}
 
 
 }

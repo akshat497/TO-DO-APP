@@ -1,0 +1,24 @@
+<div class="container mt-5">
+  <h2 class="text-center">Register</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="user.name" name="name" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email" required />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password" required />
+    </div>
+    <button type="submit" class="btn btn-primary btn-block mt-3" [disabled]="loading">Register</button>
+  </form>
+  <div *ngIf="error" class="alert alert-danger mt-3">
+    {{ error }}
+  </div>
+  <div *ngIf="success" class="alert alert-success mt-3">
+    {{ success }}
+  </div>
+</div>
